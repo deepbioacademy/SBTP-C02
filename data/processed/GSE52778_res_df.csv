@@ -1,0 +1,7 @@
+Column,What it means,Why it matters
+baseMean,The average of the normalized counts for a gene across all samples.,"It filters out ""noise."" Genes with very low baseMean (e.g., < 10) are often excluded because their signals are too weak to be statistically reliable."
+log2FoldChange,"The effect size. It’s the $log_2$ ratio of the ""dex"" group over the ""untreated"" group.","of the ""dex"" group over the ""untreated"" group.The direction of change. A value of 2 means the gene is 4x more expressed in dex ($2^2 = 4$). A value of -1 means it is half as expressed ($2^{-1} = 0.5$)."
+lfcSE,The Standard Error of the log2FoldChange estimate.,"It represents uncertainty. If a gene has a high fold change but a huge lfcSE, it means the samples in that group were inconsistent."
+stat,"The Wald statistic (calculated as log2FoldChange / lfcSE).This is the ""raw score"" used to determine the p-value. The further this is from zero, the more likely the change is real.",
+pvalue,The raw probability that the observed change happened by random chance.,"It’s the traditional threshold ($P < 0.05$), but in genomics, it's dangerous to use on its own because you are testing 20,000+ genes at once."
+padj,"The Adjusted P-value (often using Benjamini-Hochberg FDR).The ""Golden Metric.""","padj This corrects for false positives. You should almost always use padj < 0.05 (or $0.1$) to define your ""Significant Genes."""
