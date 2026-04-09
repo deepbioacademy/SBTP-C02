@@ -104,12 +104,3 @@ write.csv(res_df, "data/processed/GSE52778_res_df.csv", row.names = F)
 write_rds(res_df, "data/processed/GSE52778_res_df.rds")
 
 names(res_df)
-
-
-
-
-
-
-
-
-
